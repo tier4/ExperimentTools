@@ -1,0 +1,12 @@
+<launch>
+  <arg name="input_poincloud_topic" />
+  <arg name="update_hz" default="10.0"/>
+  <arg name="error_point_num" default="50"/>
+
+  <!-- pointcloud checker -->
+  <node pkg="pointcloud_checker" exec="pointcloud_checker" name="pointcloud_checker" output="screen">
+    <param name="update_hz" value="$(var update_hz)"/>
+    <param name="error_point_num" value="$(var error_point_num)"/>
+    <remap from="~/input/pointcloud" to="$(var input_poincloud_topic)"/>
+  </node>
+</launch>
