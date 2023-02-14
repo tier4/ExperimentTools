@@ -18,7 +18,7 @@ ament_auto_add_library(pointcloud_checker_node SHARED
 )
 
 rclcpp_components_register_node(pointcloud_checker_node
-  PLUGIN "pointcloud_checker::PointCloudCheckerNode"
+  PLUGIN "pointcloud_checker::PointcloudCheckerNode"
   EXECUTABLE pointcloud_checker
 )
 
