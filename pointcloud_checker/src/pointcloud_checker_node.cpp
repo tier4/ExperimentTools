@@ -32,7 +32,8 @@ PointcloudCheckerNode::PointcloudCheckerNode(const rclcpp::NodeOptions & node_op
 
   // subscriber
   sub_pcd_ = this->create_subscription<PointCloud2>(
-    "~/input/pointcloud", 1, std::bind(&PointcloudCheckerNode::onPointcloud, this, _1));
+    "~/input/pointcloud", rclcpp::SensorDataQoS(),
+    std::bind(&PointcloudCheckerNode::onPointcloud, this, _1));
 
   /* Diagnostic Updater */
   updater_ptr_ = std::make_shared<Updater>(this, 1.0 / update_hz_);
