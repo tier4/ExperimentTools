@@ -24,7 +24,7 @@ PointcloudCheckerNode::PointcloudCheckerNode(const rclcpp::NodeOptions & node_op
 {
   using std::placeholders::_1;
   // get parameter
-  update_hz_ = this->declare_parameter<int>("update_hz", 10);
+  update_hz_ = this->declare_parameter<double>("update_hz", 10.0);
   error_point_num_ = this->declare_parameter<int>("error_point_num", 50);
 
   // publisher
